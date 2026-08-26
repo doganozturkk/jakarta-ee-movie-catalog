@@ -1,0 +1,13 @@
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/client/EJBClient.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/jsf/SampleJSFBean.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/dao/MovieDaoLocal.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/vao/Movie.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/ejb/MovieRemote.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/dao/PersonDao.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/jsf/MovieJsfBean.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/mdb/MovieMDB.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/dao/MovieDao.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/jms/MovieProducer.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/vao/Person.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/jsf/PeopleJsfBean.java
+/Users/doganozturk/Downloads/aiv-master/2026/00_JSF101/src/main/java/si/um/feri/jee/sample/ejb/MovieRemoteBean.java

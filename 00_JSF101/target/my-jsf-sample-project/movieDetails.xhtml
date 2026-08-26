@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+
+<ui:composition template="WEB-INF/template/template.xhtml">
+
+    <ui:define name="content">
+
+        <f:view>
+
+            <h2>Movie Details</h2>
+
+            <table border="1" cellpadding="5">
+
+                <tr>
+                    <td><b>Title</b></td>
+                    <td>#{movies.selectedMovie.title}</td>
+                </tr>
+
+                <tr>
+                    <td><b>Genre</b></td>
+                    <td>#{movies.selectedMovie.genre}</td>
+                </tr>
+
+                <tr>
+                    <td><b>Release Year</b></td>
+                    <td>#{movies.selectedMovie.releaseYear}</td>
+                </tr>
+
+                <tr>
+                    <td><b>Director</b></td>
+                    <td>#{movies.selectedMovie.director}</td>
+                </tr>
+
+                <tr>
+                    <td><b>Description</b></td>
+                    <td>#{movies.selectedMovie.description}</td>
+                </tr>
+
+            </table>
+
+            <br/>
+
+            <h:button value="Back to Movies"
+                      outcome="movies"/>
+
+        </f:view>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

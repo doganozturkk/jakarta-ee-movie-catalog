@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html
+		xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Movie Catalog</title>
+</h:head>
+
+<h:body>
+
+	<div id="header">
+
+		[
+		<h:link outcome="/page.xhtml" value="Home"/> |
+		<h:link outcome="/movies.xhtml" value="Movie List"/> |
+		<h:link outcome="/createMovie.xhtml" value="Create Movie"/> |
+		<h:link outcome="/moviesWithoutDirector.xhtml" value="Movies Without Director"/>
+		]
+
+		<hr/>
+
+	</div>
+
+	<div id="content">
+
+		<h1>Movie Catalog Application</h1>
+
+		<p>
+			This is a simple Jakarta EE / JSF application demonstrating:
+		</p>
+
+		<ul>
+			<li>In-memory data storage</li>
+			<li>Create Movie</li>
+			<li>Read Movie List</li>
+			<li>JSF Managed Bean</li>
+			<li>DAO architecture</li>
+		</ul>
+
+		<h:outputText value="Use the navigation menu to create and view movies."/>
+
+	</div>
+
+</h:body>
+
+</html>

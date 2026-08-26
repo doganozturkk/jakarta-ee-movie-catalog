@@ -1,0 +1,13 @@
+si/um/feri/jee/sample/ejb/MovieRemote.class
+si/um/feri/jee/sample/dao/PersonDao.class
+si/um/feri/jee/sample/mdb/MovieMDB.class
+si/um/feri/jee/sample/client/EJBClient.class
+si/um/feri/jee/sample/dao/MovieDaoLocal.class
+si/um/feri/jee/sample/dao/MovieDao.class
+si/um/feri/jee/sample/jsf/SampleJSFBean.class
+si/um/feri/jee/sample/vao/Movie.class
+si/um/feri/jee/sample/jsf/MovieJsfBean.class
+si/um/feri/jee/sample/jms/MovieProducer.class
+si/um/feri/jee/sample/vao/Person.class
+si/um/feri/jee/sample/ejb/MovieRemoteBean.class
+si/um/feri/jee/sample/jsf/PeopleJsfBean.class

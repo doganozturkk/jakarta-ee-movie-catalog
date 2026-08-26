@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="WEB-INF/template/template.xhtml">
+
+    <ui:define name="content">
+
+        <h1>Movies Without Director</h1>
+
+        <!-- geri dön -->
+        <h:link outcome="movies.xhtml" value="⬅ Back to Movie List"/>
+        <br/><br/>
+
+        <h:dataTable value="#{movies.moviesWithoutDirector}" var="m">
+
+            <h:column>
+                <f:facet name="header">Title</f:facet>
+                #{m.title}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Genre</f:facet>
+                #{m.genre}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Release Year</f:facet>
+                #{m.releaseYear}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Director</f:facet>
+                #{m.director}
+            </h:column>
+
+            <!-- DETAILS -->
+            <h:column>
+                <f:facet name="header">Details</f:facet>
+
+                <h:commandButton
+                        value="View"
+                        action="#{movies.viewDetails(m)}"
+                        immediate="true"/>
+            </h:column>
+
+        </h:dataTable>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

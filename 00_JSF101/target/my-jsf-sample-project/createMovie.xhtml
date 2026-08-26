@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="WEB-INF/template/template.xhtml">
+
+    <ui:define name="content">
+
+        <h2>#{movies.editMode ? 'Edit Movie' : 'Create Movie'}</h2>
+
+        <h:form id="movieForm">
+
+            <h:messages id="msgs"
+                        layout="list"
+                        styleClass="alert-container"
+                        errorClass="alert error"
+                        infoClass="alert success"
+                        warnClass="alert warning"
+                        fatalClass="alert error"/>
+
+            <style>
+                .alert-container {
+                    list-style: none;
+                    padding: 0;
+                    margin-bottom: 15px;
+                }
+
+                .alert {
+                    padding: 14px;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                    animation: fadeIn 0.3s ease-in-out;
+                }
+
+                .success {
+                    background-color: #e6f9ec;
+                    color: #1e7e34;
+                    border: 1px solid #b7ebc6;
+                }
+
+                .error {
+                    background-color: #fdecea;
+                    color: #b02a37;
+                    border: 1px solid #f5c2c7;
+                }
+
+                .warning {
+                    background-color: #fff3cd;
+                    color: #856404;
+                    border: 1px solid #ffeeba;
+                }
+
+                .btn {
+                    padding: 10px 16px;
+                    border-radius: 8px;
+                    border: none;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                .btn-primary {
+                    background-color: #2563eb;
+                    color: white;
+                }
+
+                input, textarea {
+                    padding: 8px;
+                    border-radius: 6px;
+                    border: 1px solid #ccc;
+                    width: 300px;
+                }
+
+                input:focus, textarea:focus {
+                    outline: none;
+                    border-color: #2563eb;
+                }
+
+                @keyframes fadeIn {
+                    from {opacity: 0; transform: translateY(-5px);}
+                    to {opacity: 1; transform: translateY(0);}
+                }
+            </style>
+
+            <!-- TITLE -->
+            <p>Title:</p>
+            <h:inputText value="#{movies.movieOnUi.title}"
+                         required="true"
+                         requiredMessage="Please enter a title"/>
+
+            <!-- GENRE -->
+            <p>Genre:</p>
+            <h:inputText value="#{movies.movieOnUi.genre}"
+                         required="true"
+                         requiredMessage="Please enter a genre"/>
+
+            <!-- YEAR -->
+            <p>Release Year:</p>
+            <h:inputText value="#{movies.movieOnUi.releaseYear}"
+                         required="true"
+                         requiredMessage="Please enter a release year"
+                         converterMessage="Year must be a number"
+                         validatorMessage="Specified attribute is not between the expected values of 1.900 and 2.100.">
+
+                <f:validateLongRange minimum="1900" maximum="2100"/>
+            </h:inputText>
+
+            <!-- DIRECTOR -->
+            <p>Director:</p>
+            <h:inputText value="#{movies.movieOnUi.director}"/>
+
+            <!-- DESCRIPTION -->
+            <p>Description:</p>
+            <h:inputTextarea value="#{movies.movieOnUi.description}"
+                             required="true"
+                             requiredMessage="Please enter a description"
+                             validatorMessage="Description must be at least 10 characters">
+
+                <f:validateLength minimum="10"/>
+            </h:inputTextarea>
+
+            <br/><br/>
+
+            <!-- BUTTON -->
+            <h:commandButton
+                    value="#{movies.editMode ? 'Update Movie' : 'Add Movie'}"
+                    styleClass="btn btn-primary"
+                    action="#{movies.addMovieFromUi}">
+
+                <f:ajax execute="@form" render="movieForm msgs"/>
+
+            </h:commandButton>
+
+            <h:commandButton
+                    value="Cancel"
+                    action="#{movies.cancelEdit}"
+                    rendered="#{movies.editMode}"
+                    immediate="true"/>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

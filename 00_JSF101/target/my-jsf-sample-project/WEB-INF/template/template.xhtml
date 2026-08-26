@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+		xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<meta charset="UTF-8"/>
+	<title>
+		<ui:insert name="title">🎬 Movie Catalog</ui:insert>
+	</title>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+		}
+
+		#header h2 {
+			margin-bottom: 10px;
+		}
+
+		/* MODERN NAVBAR */
+		#menu {
+			background: linear-gradient(90deg, #1f1f1f, #2c2c2c);
+			padding: 12px 18px;
+			border-radius: 12px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+		}
+
+		#menu a {
+			color: #f1f1f1;
+			margin-right: 20px;
+			text-decoration: none;
+			font-weight: 600;
+			font-size: 15px;
+			transition: all 0.2s ease-in-out;
+		}
+
+		#menu a:hover {
+			color: #00e5ff;
+			transform: scale(1.05);
+		}
+
+		#content {
+			margin-top: 25px;
+		}
+	</style>
+
+</h:head>
+
+<h:body>
+
+	<div id="header">
+
+		<h2>🎬 Movie Catalog System</h2>
+
+		<div id="menu">
+
+			<h:link outcome="/page.xhtml" value="🏡 Home"/>
+			<h:link outcome="/movies.xhtml" value="🎞️ Movie List"/>
+			<h:link outcome="/createMovie.xhtml" value="🆕 Create Movie"/>
+			<h:link outcome="/moviesWithoutDirector.xhtml" value="📭 Movies Without Director"/>
+
+		</div>
+
+		<hr/>
+
+	</div>
+
+	<div id="content">
+		<ui:insert name="content">
+			Content goes here.
+		</ui:insert>
+	</div>
+
+</h:body>
+</html>

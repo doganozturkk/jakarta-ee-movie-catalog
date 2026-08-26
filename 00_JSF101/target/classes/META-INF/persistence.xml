@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.0">
+
+    <persistence-unit name="moviePU" transaction-type="JTA">
+
+        <!-- ENTITY TANIMI KALSIN -->
+        <class>si.um.feri.jee.sample.vao.Movie</class>
+
+        <properties>
+
+            <!-- DB YOK -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+
+            <!-- CACHE FULL KAPALI -->
+            <property name="hibernate.cache.use_second_level_cache" value="false"/>
+            <property name="hibernate.cache.use_query_cache" value="false"/>
+
+            <!-- HIBERNATE CACHE PROVIDER KAPAT -->
+            <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.internal.NoCachingRegionFactory"/>
+
+        </properties>
+    </persistence-unit>
+
+</persistence>

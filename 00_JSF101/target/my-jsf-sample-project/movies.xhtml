@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="WEB-INF/template/template.xhtml">
+
+    <ui:define name="content">
+
+        <h1>Movie List</h1>
+
+        <h:link outcome="createMovie" value="➕ Create New Movie"/>
+        <br/><br/>
+
+        <h:form id="movieListForm">
+
+            <!-- 🔥 AUTO REFRESH BUTTON (HIDDEN) -->
+            <h:commandButton id="refreshBtn" style="display:none">
+                <f:ajax execute="@this" render="movieTable"/>
+            </h:commandButton>
+
+            <!-- 🔥 POLLING SCRIPT -->
+            <script>
+                setInterval(function() {
+                    var btn = document.getElementById("movieListForm:refreshBtn");
+                    if (btn) btn.click();
+                }, 3000); // 3 saniye
+            </script>
+
+            <h:dataTable id="movieTable"
+                         value="#{movies.allMovies}"
+                         var="m"
+                         border="1"
+                         cellpadding="5">
+
+                <h:column>
+                    <f:facet name="header">Title</f:facet>
+                    #{m.title}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Genre</f:facet>
+                    #{m.genre}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Release Year</f:facet>
+                    #{m.releaseYear}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Director</f:facet>
+                    #{m.director}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Details</f:facet>
+                    <h:commandButton value="View"
+                                     action="#{movies.viewDetails(m)}"
+                                     immediate="true"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Edit</f:facet>
+                    <h:commandButton value="Edit"
+                                     action="#{movies.editMovie(m)}"
+                                     immediate="true"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton value="Delete"
+                                     action="#{movies.deleteMovie(m)}"
+                                     onclick="return confirm('Are you sure?')"
+                                     immediate="true"/>
+                </h:column>
+
+            </h:dataTable>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>
+</html>
